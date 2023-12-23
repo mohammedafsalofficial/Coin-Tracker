@@ -5,7 +5,11 @@ type Props = {
 };
 
 const AppLayout: React.FC<Props> = ({ children }) => {
-  return <div className="min-h-screen flex justify-center items-start py-20">{children}</div>;
+  return (
+    <div className="min-h-screen w-96 mx-auto flex flex-col justify-start items-start py-20">
+      {children}
+    </div>
+  );
 };
 
 export default AppLayout;
