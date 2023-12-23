@@ -1,4 +1,5 @@
-import { createContext } from "react";
+import React, { ReactNode, createContext, useReducer } from "react";
+import reducerFunction from "./AppReducer";
 
 interface Transaction {
   id: number;
@@ -6,18 +7,37 @@ interface Transaction {
   amount: number;
 }
 
-interface InitialState {
+export interface TransactionState {
   transactions: Transaction[];
 }
 
+interface ContextProviderProps {
+  children: ReactNode;
+}
+
+export interface Action {
+  type: string;
+  payload: number;
+}
+
 // Initial state
-const initialState: InitialState = {
+const initialState: TransactionState = {
   transactions: [
-    { id: 1, text: "Flower", amount: -100 },
-    { id: 2, text: "Salary", amount: 30000 },
-    { id: 3, text: "Mobile", amount: -20000 },
+    { id: 1, text: "Flower", amount: -20 },
+    { id: 2, text: "Salary", amount: 300 },
+    { id: 3, text: "Mobile", amount: -80 },
   ],
 };
 
 // Create the context
 export const GlobalContext = createContext(initialState);
+
+export const GlobalContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
+  const [state, dispatch] = useReducer(reducerFunction, initialState);
+
+  return (
+    <GlobalContext.Provider value={{ transactions: state.transactions }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
