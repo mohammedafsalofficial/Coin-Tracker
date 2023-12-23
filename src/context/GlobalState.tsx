@@ -23,9 +23,9 @@ export interface Action {
 // Initial state
 const initialState: TransactionState = {
   transactions: [
-    { id: 1, text: "Flower", amount: -20 },
-    { id: 2, text: "Salary", amount: 300 },
-    { id: 3, text: "Mobile", amount: -80 },
+    { id: 1, text: "Flower", amount: -10 },
+    { id: 2, text: "Salary", amount: 1000 },
+    { id: 3, text: "Mobile", amount: -150 },
   ],
 };
 
