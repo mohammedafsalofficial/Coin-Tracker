@@ -7,6 +7,7 @@ import IncomeExpenses from "./components/IncomeExpenses";
 
 import "./App.css";
 import TransactionList from "./components/TransactionList";
+import AddTransaction from "./components/AddTransaction";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Balance />
           <IncomeExpenses />
           <TransactionList />
+          <AddTransaction />
         </div>
       </GlobalContextProvider>
     </AppLayout>

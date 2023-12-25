@@ -1,7 +1,7 @@
 import React, { ReactNode, createContext, useReducer } from "react";
 import reducerFunction from "./AppReducer";
 
-type Transaction = {
+export type Transaction = {
   id: number;
   text: string;
   amount: number;
@@ -30,6 +30,13 @@ export const GlobalContext = createContext(initialState);
 export const GlobalContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducerFunction, initialState);
 
+  const addTransaction = (transaction: Transaction): void => {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: transaction,
+    });
+  };
+
   const deleteTransaction = (id: number): void => {
     dispatch({
       type: "DELETE_TRANSACTION",
@@ -38,7 +45,9 @@ export const GlobalContextProvider: React.FC<ContextProviderProps> = ({ children
   };
 
   return (
-    <GlobalContext.Provider value={{ transactions: state.transactions, deleteTransaction }}>
+    <GlobalContext.Provider
+      value={{ transactions: state.transactions, addTransaction, deleteTransaction }}
+    >
       {children}
     </GlobalContext.Provider>
   );

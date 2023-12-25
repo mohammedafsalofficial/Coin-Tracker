@@ -6,10 +6,10 @@ const TransactionList: React.FC = () => {
   const { transactions } = useContext(GlobalContext);
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 h-52 md:h-60 overflow-y-hidden">
       <h3 className="text-xl font-bold uppercase">History</h3>
       <hr className="my-3 border-[#808080]" />
-      <ul className="">
+      <ul className="h-full overflow-auto">
         {transactions.map((transaction) => (
           <Transaction key={transaction.id} transaction={transaction} />
         ))}
