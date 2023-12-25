@@ -2,10 +2,10 @@ import { Transaction, Transactions } from "./GlobalState";
 
 type Action = {
   type: string;
-  payload: Transaction | number;
+  payload: number | Transaction;
 };
 
-const reducerFunction = (state: Transactions, action: Action) => {
+const reducerFunction = (state: Transactions, action: Action): Transactions => {
   switch (action.type) {
     case "ADD_TRANSACTION":
       return {
