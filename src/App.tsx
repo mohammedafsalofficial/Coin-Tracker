@@ -6,15 +6,17 @@ import { GlobalContextProvider } from "./context/GlobalState";
 import IncomeExpenses from "./components/IncomeExpenses";
 
 import "./App.css";
+import TransactionList from "./components/TransactionList";
 
 const App: React.FC = () => {
   return (
     <AppLayout>
       <GlobalContextProvider>
         <Header />
-        <div className="">
+        <div>
           <Balance />
           <IncomeExpenses />
+          <TransactionList />
         </div>
       </GlobalContextProvider>
     </AppLayout>

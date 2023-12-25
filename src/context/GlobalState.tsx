@@ -1,24 +1,24 @@
 import React, { ReactNode, createContext, useReducer } from "react";
 import reducerFunction from "./AppReducer";
 
-interface Transaction {
+type Transaction = {
   id: number;
   text: string;
   amount: number;
-}
+};
 
-export interface TransactionState {
+export type TransactionState = {
   transactions: Transaction[];
-}
+};
 
-interface ContextProviderProps {
-  children: ReactNode;
-}
+type ContextProviderProps = {
+  children?: ReactNode;
+};
 
-export interface Action {
+export type Action = {
   type: string;
   payload: number;
-}
+};
 
 // Initial state
 const initialState: TransactionState = {
