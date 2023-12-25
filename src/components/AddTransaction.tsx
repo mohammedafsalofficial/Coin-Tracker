@@ -24,16 +24,16 @@ const AddTransaction: React.FC = () => {
 
   return (
     <div className="mt-10">
-      <h3 className="text-xl font-bold uppercase">Add Transaction</h3>
+      <h3 className="text-lg md:text-xl font-bold uppercase">Add Transaction</h3>
       <hr className="my-3 border-[#808080]" />
       <form className="mt-5" onSubmit={handleSubmit}>
         <div className="space-y-3">
           <div className="flex flex-col space-y-1">
-            <label className="text-xl" htmlFor="text">
+            <label className="text-lg md:text-xl" htmlFor="text">
               Text
             </label>
             <input
-              className="shadow-inner border border-[#808080] py-1 px-2 text-xl"
+              className="shadow-inner border border-[#808080] py-1 px-2 text-lg md:text-xl"
               type="text"
               placeholder="Enter Text"
               value={text}
@@ -41,11 +41,11 @@ const AddTransaction: React.FC = () => {
             />
           </div>
           <div className="flex flex-col space-y-1">
-            <label className="text-xl" htmlFor="amount">
+            <label className="text-lg md:text-xl" htmlFor="amount">
               Amount
             </label>
             <input
-              className="shadow-inner border border-[#808080] py-1 px-2 text-xl"
+              className="shadow-inner border border-[#808080] py-1 px-2 text-lg md:text-xl"
               type="number"
               placeholder="Enter Amount"
               value={amount}

@@ -7,7 +7,7 @@ const TransactionList: React.FC = () => {
 
   return (
     <div className="mt-10 h-52 md:h-60 overflow-y-hidden">
-      <h3 className="text-xl font-bold uppercase">History</h3>
+      <h3 className="text-lg md:text-xl font-bold uppercase">History</h3>
       <hr className="my-3 border-[#808080]" />
       <ul className="h-full overflow-auto">
         {transactions.map((transaction) => (

@@ -13,8 +13,8 @@ const Balance: React.FC = () => {
 
   return (
     <>
-      <h3 className="text-xl font-semibold uppercase">Your balance</h3>
-      <p className="text-5xl font-bold">${totalBalance}</p>
+      <h3 className="text-lg md:text-xl font-semibold uppercase">Your balance</h3>
+      <p className="text-4xl md:text-5xl font-bold">${totalBalance}</p>
     </>
   );
 };

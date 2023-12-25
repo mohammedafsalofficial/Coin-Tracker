@@ -6,7 +6,7 @@ type AppLayoutProps = {
 
 const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   return (
-    <div className="h-screen w-96 mx-auto flex flex-col justify-start items-start py-10">
+    <div className="h-screen w-96 mx-auto flex flex-col justify-start items-start md:py-10">
       {children}
     </div>
   );
