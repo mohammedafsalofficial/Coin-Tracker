@@ -7,8 +7,9 @@ type Transaction = {
   amount: number;
 };
 
-export type TransactionState = {
+export type InitialTransactionState = {
   transactions: Transaction[];
+  deleteTransaction?: (id: number) => void;
 };
 
 type ContextProviderProps = {
@@ -21,7 +22,7 @@ export type Action = {
 };
 
 // Initial state
-const initialState: TransactionState = {
+const initialState: InitialTransactionState = {
   transactions: [
     { id: 1, text: "Flower", amount: -10 },
     { id: 2, text: "Salary", amount: 1000 },
@@ -35,8 +36,15 @@ export const GlobalContext = createContext(initialState);
 export const GlobalContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducerFunction, initialState);
 
+  const deleteTransaction = (id: number): void => {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: id,
+    });
+  };
+
   return (
-    <GlobalContext.Provider value={{ transactions: state.transactions }}>
+    <GlobalContext.Provider value={{ transactions: state.transactions, deleteTransaction }}>
       {children}
     </GlobalContext.Provider>
   );
