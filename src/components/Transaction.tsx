@@ -12,7 +12,7 @@ type TransactionProps = {
 const Transaction: React.FC<TransactionProps> = ({ transaction }) => {
   const { id, text, amount } = transaction;
 
-  const { transactions, deleteTransaction } = useContext(GlobalContext);
+  const { deleteTransaction } = useContext(GlobalContext);
 
   return (
     <li className="flex justify-between space-x-1">

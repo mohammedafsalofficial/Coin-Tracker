@@ -1,6 +1,11 @@
-import { Action, InitialTransactionState } from "./GlobalState";
+import { Transactions } from "./GlobalState";
 
-const reducerFunction = (state: InitialTransactionState, action: Action) => {
+type Action = {
+  type: string;
+  payload: number;
+};
+
+const reducerFunction = (state: Transactions, action: Action) => {
   switch (action.type) {
     case "DELETE_TRANSACTION":
       return {

@@ -7,22 +7,16 @@ type Transaction = {
   amount: number;
 };
 
-export type InitialTransactionState = {
+export type Transactions = {
   transactions: Transaction[];
-  deleteTransaction?: (id: number) => void;
 };
 
 type ContextProviderProps = {
   children?: ReactNode;
 };
 
-export type Action = {
-  type: string;
-  payload: number;
-};
-
 // Initial state
-const initialState: InitialTransactionState = {
+const initialState: Transactions = {
   transactions: [
     { id: 1, text: "Flower", amount: -10 },
     { id: 2, text: "Salary", amount: 1000 },
